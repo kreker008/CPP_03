@@ -12,11 +12,18 @@ public:
 	 *  Constructor
 	 */
 	FragTrap(std::string const&);
+	FragTrap(const FragTrap&);
+
+	/*
+	 *  Operator overlord
+	 */
+	FragTrap& operator=(const FragTrap&);
 
 	/*
 	 *  Func-member
 	 */
-	void highFivesGuys(void);
+	void	highFivesGuys(void);
+	void	attack(std::string const & target);
 
 	~FragTrap();
 private:

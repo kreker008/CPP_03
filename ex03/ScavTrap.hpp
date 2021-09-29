@@ -5,17 +5,24 @@
 #include "string"
 #include "iostream"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 public:
 	/*
 	 *  Constructor
 	 */
 	ScavTrap(std::string const&);
+	ScavTrap(const ScavTrap& s);
+
+	/*
+	 *  Operator overlord
+	 */
+	ScavTrap& operator=(const ScavTrap&);
 
 	/*
 	 *  Func-member
 	 */
+	void attack(std::string const & target);
 	void guardGate();
 
 	~ScavTrap();

@@ -10,17 +10,24 @@ public:
 /*
  *  Constructor
  */
-	ClapTrap(std::string const&);
+	ClapTrap(std::string const&, int hp=10, int ep=10, int dp=0);
+	ClapTrap(const ClapTrap&);
+
+/*
+ *  Operator overlord
+ */
+	ClapTrap& operator=(const ClapTrap&);
 
 /*
  *  Func-member
  */
-	void	attack(std::string const & target);
-	void	takeDamage(unsigned int amount);
-	void	beRepaired(unsigned int amount);
+	void				attack(std::string const & target);
+	void				takeDamage(unsigned int amount);
+	void				beRepaired(unsigned int amount);
 
 	~ClapTrap();
-private:
+
+protected:
 /*
  *  Variable
  */

@@ -5,18 +5,25 @@
 #include "string"
 #include "iostream"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 public:
 	/*
 	 *  Constructor
 	 */
 	FragTrap(std::string const&);
+	FragTrap(const FragTrap&);
+
+	/*
+	 *  Operator overlord
+	 */
+	FragTrap& operator=(const FragTrap&);
 
 	/*
 	 *  Func-member
 	 */
-	void highFivesGuys(void);
+	void	highFivesGuys(void);
+	void	attack(std::string const & target);
 
 	~FragTrap();
 private:

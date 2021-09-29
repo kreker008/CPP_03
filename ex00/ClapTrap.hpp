@@ -10,8 +10,13 @@ public:
 /*
  *  Constructor
  */
-	ClapTrap(std::string const&);
-	ClapTrap(std::string const&, int, int , int);
+	ClapTrap(std::string const&, int hp=10, int ep=10, int dp=0);
+	ClapTrap(const ClapTrap&);
+
+/*
+ *  Operator overlord
+ */
+	ClapTrap& operator=(const ClapTrap&);
 
 /*
  *  Func-member
@@ -19,7 +24,6 @@ public:
 	void				attack(std::string const & target);
 	void				takeDamage(unsigned int amount);
 	void				beRepaired(unsigned int amount);
-	std::string const&	getName();
 
 	~ClapTrap();
 private:
@@ -30,8 +34,6 @@ private:
 	unsigned int	Hitpoints;
 	unsigned int	Energy_points;
 	unsigned int	Attack_damage;
-
-
 };
 
 #endif
